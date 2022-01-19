@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="hw.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./hw.js"></script>
+    <script>
+      const app = document.getElementById("app");
+      app.classList.add("block");
+      const allClock = [];
+
+      const btnAddNew = document.createElement("button");
+      btnAddNew.innerHTML = "Add New Clock";
+      btnAddNew.addEventListener("click", () => {
+        const clock = new Clock();
+        allClock.push(clock);
+        app.appendChild(clock.render());
+      });
+
+      const btnStartAll = document.createElement("button");
+      btnStartAll.innerHTML = "Start All";
+      btnStartAll.addEventListener("click", () => {
+        allClock.forEach((e) => {
+          e.start();
+        });
+      });
+
+      const btnPauseAll = document.createElement("button");
+      btnPauseAll.innerHTML = "Pause All";
+      btnPauseAll.addEventListener("click", () => {
+        allClock.forEach((e) => {
+          e.pause();
+        });
+      });
+
+      const btnStopAll = document.createElement("button");
+      btnStopAll.innerHTML = "Stop All";
+      btnStopAll.addEventListener("click", () => {
+        allClock.forEach((e) => {
+          e.stop();
+        });
+      });
+
+      app.appendChild(btnAddNew);
+      app.appendChild(btnStartAll);
+      app.appendChild(btnPauseAll);
+      app.appendChild(btnStopAll);
+
+      const clock = new Clock();
+      app.appendChild(clock.render());
+    </script>
+  </body>
+</html>

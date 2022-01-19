@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: segoe UI;
+}
+
+.input-group {
+  margin: 12px 0px;
+}
+
+.input-group.has-error input {
+  border: 1px solid red;
+  color: red;
+  outline: red;
+}
+
+.error-msg {
+  font-size: 12px;
+  font-style: italic;
+  color: red;
+}
+
+.input-group input {
+  padding: 5px 8px;
+  width: 100%;
+  margin: 3px 0;
+  border-radius: 3px;
+  border: 1px solid #555555;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
+}
